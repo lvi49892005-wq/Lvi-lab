@@ -19,6 +19,7 @@ window.GALLERY = [
       { src: "assets/gallery/2026/2026-11-01.webp", thumb: "assets/gallery/2026/thumbs/2026-11-01.webp", caption: "일본바이러스학회 (2026.11)" },
       { src: "assets/gallery/2026/2026-08-01.webp", thumb: "assets/gallery/2026/thumbs/2026-08-01.webp", caption: "대한바이러스학회 연구회연합 정기학술대회 (2026.08)" },
       { src: "assets/gallery/2026/2026-08-02.webp", thumb: "assets/gallery/2026/thumbs/2026-08-02.webp", caption: "전상혁 석사졸업 (2026.08)" },
+      { src: "assets/gallery/2026/2026-04-01.webp", thumb: "assets/gallery/2026/thumbs/2026-04-01.webp", caption: "봄 산책 (2026.04)" },
       { src: "assets/gallery/2026/2026-02-01.webp", thumb: "assets/gallery/2026/thumbs/2026-02-01.webp", caption: "졸업식 (2026.02)" }
     ]
   },
