@@ -309,3 +309,11 @@ td.mono small { display: block; color: var(--muted); font-size: .78rem; }
 :root { --font-serif: "Noto Serif KR", "Nanum Myeongjo", "Batang", "AppleMyungjo", serif; }
 html[lang="ko"] body { font-family: var(--font-serif); }
 html[lang="ko"] :is(h1, h2, h3, h4, .site-header, .site-footer, .btn, .chip, .badge, .line, th, .eyebrow, .label, .cv-title, .stats, .year, .search, .pin, .tag-link, .count-line, .research-name, #location, #location *) { font-family: var(--font); }
+
+/* ---------- 연구실 로고 (헤더) ----------
+ * 로고 이미지 배경이 흰색이라, 어두운 화면 모드에서는 흰 바탕 상자로 감쌉니다. */
+:root { --logo-bg: #ffffff; --logo-pad: 0px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --logo-pad: 3px 6px; } }
+:root[data-theme="dark"] { --logo-pad: 3px 6px; }
+.brand-logo { height: 46px; width: auto; flex: none; display: block; background: var(--logo-bg); border-radius: 6px; padding: var(--logo-pad); box-sizing: content-box; }
+@media (max-width: 1000px) { .brand-logo { height: 40px; } }

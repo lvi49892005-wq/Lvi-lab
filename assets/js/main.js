@@ -59,7 +59,7 @@
     header.innerHTML = `
       <div class="container header-inner">
         <a class="brand" href="${home}">
-          <span class="brand-mark">${esc(S.shortName)}</span>
+          <img class="brand-logo" src="${ROOT}assets/img/logo-header.png" alt="${esc(S.shortName)} ${en ? "logo" : "로고"}" width="93" height="56">
           <span class="brand-text">
             <strong>${esc(en ? S.nameEn : S.nameKo)}</strong>
             <small>${esc(en ? S.universityEn : S.university)}</small>
