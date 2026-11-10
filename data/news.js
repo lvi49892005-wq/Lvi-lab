@@ -5,8 +5,16 @@
  *  pinned: true 이면 목록 상단 고정
  * ========================================================= */
 window.NEWS = [
+  
   {
-    date: "2026-11-01", category: "recruit", pinned: true,
+    date: "2026-11-10", category: "recruit", pinned: true,
+    title: "2027 전기 및 후기 대학원생 모집",
+    body: "가톨릭대학교 의생명과학과 남재환 교수님 - 화학과 이기연 교수님 공동지도교수로 유기합성과 mRNA 백신 전달체에 대해 연구할 대학원생을 모집합니다. 자세한 내용은 공고문을 확인해주세요.",
+    link: "join.html"
+  },
+  
+  {
+    date: "2026-11-10", category: "recruit", pinned: true,
     title: "2027 전기 학부연구생 모집",
     body: "연구실에서 함께할 학부연구생을 모집합니다. 자세한 내용은 Join Us 페이지를 참고하세요.",
     link: "join.html"
