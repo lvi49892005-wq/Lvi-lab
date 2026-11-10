@@ -111,12 +111,12 @@ window.ALUMNI = [
   { year: 2026, name: "윤수빈", degree: "박사", now: "GC 녹십자" },
   { year: 2026, name: "이성현", degree: "박사", now: "미국 유타주립대학 PostDoc" },
   { year: 2026, name: "김연정", degree: "박사", now: "GC 녹십자" },
-  { year: 2026, name: "정오석", degree: "박사", now: "SK 바이오사이언스" },
   { year: 2026, name: "최희정", degree: "석사", now: "국립보건연구원" },
   { year: 2026, name: "이예은", degree: "석사", now: "연세대학교 Research Assistant" },
   { year: 2026, name: "정혜선", degree: "석사", now: "SML 바이오팜" },
   { year: 2026, name: "김아연", degree: "석사", now: "SML 바이오팜" },
   { year: 2026, name: "김정민", degree: "석사", now: "국제백신연구소" },
   { year: 2026, name: "전상혁", degree: "석사", now: "한국파스퇴르연구소" },
-  { year: 2026, name: "이소원", degree: "석사", now: "미국 유타주립대학" }
-];
+  { year: 2027, name: "정오석", degree: "박사", now: "SK 바이오사이언스" },
+  { year: 2027, name: "이소원", degree: "석사", now: "미국 유타주립대학" },
+  ];
