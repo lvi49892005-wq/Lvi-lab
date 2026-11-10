@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <title>Patents &amp; Awards | 바이러스면역학 연구실</title>
+  <meta name="lab-page" content="patents">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Patents &amp; Technology Transfer</p>
+    <h1>특허 및 기술이전</h1>
+    <p>등록·출원 특허와 기술이전 실적입니다. 기술이전 및 공동연구 문의: <span class="sel" data-site="email"></span></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="stats" id="patent-stats"></div>
+
+    <h2 class="section-title">특허</h2>
+    <div class="filter-row"><div class="chips" id="patent-filter"></div></div>
+    <div class="table-wrap">
+      <table id="patent-table">
+        <thead><tr><th>구분</th><th>발명의 명칭</th><th>국가</th><th>출원번호 · 출원일</th><th>등록번호 · 등록일</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="table-note">국가: KR 대한민국, US 미국, PCT 국제출원</p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">기술이전</h2>
+    <div class="table-wrap">
+      <table id="transfer-table">
+        <thead><tr><th>계약일</th><th>기술 · 계약 내용</th><th>기업</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 수상: data/patents-awards.js 의 AWARDS 에 항목을 넣으면 자동으로 나타납니다 -->
+<section class="section" id="award-section" hidden>
+  <div class="container">
+    <h2 class="section-title">수상</h2>
+    <div class="table-wrap">
+      <table id="award-table">
+        <thead><tr><th>일자</th><th>수상명</th><th>수상자</th><th>수여기관</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/config.js"></script>
+<script src="data/patents-awards.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

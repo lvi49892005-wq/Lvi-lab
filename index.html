@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>바이러스면역학 연구실 | 가톨릭대학교</title>
+<meta name="description" content="가톨릭대학교 의생명과학과 바이러스면역학 연구실 (Lab of Viral Immunology)">
+<meta name="lab-page" content="about">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== 메인 배너 ===== -->
+<section class="hero">
+  <div class="container">
+    <h1>가톨릭대학교 바이러스면역학 연구실 방문을 환영합니다.</h1>
+    <p>본 연구실에서는 mRNA 기술을 기반으로 한 예방 백신과 치료제 연구를 수행하고 있습니다. 또한 여러 연구 기관과의 협력을 통해 mRNA 플랫폼을 개선하고 신규 지질나노입자(LNP) 전달체를 스크리닝함으로써, 보다 효과적인 mRNA 백신을 개발하는 것을 목표로 하고 있습니다.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="research.html">연구 분야 보기</a>
+      <a class="btn btn-outline" href="join.html">대학원생 모집</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 인사말 ===== -->
+<section class="section" id="greeting">
+  <div class="container">
+    <h2 class="section-title">인사말</h2>
+    <div class="greeting">
+      <img class="prof-photo" src="assets/img/prof-nam.webp" alt="남재환 교수" width="640" height="640">
+      <div class="greeting-body">
+        <p>안녕하십니까. 가톨릭대학교 의생명과학과 남재환 교수입니다.</p>
+        <p>저희 연구실은 바이러스학과 백신학을 기반으로, 감염병 예방 백신과 질환 치료제를 개발하는 연구를 수행하고 있습니다. 일본뇌염 바이러스와 콕사키바이러스를 이용한 백신 벡터 연구에서 출발하여, 현재는 mRNA를 핵심 플랫폼으로 삼아 감염병 백신, 항암 백신, 그리고 단백질 치료제를 대체할 수 있는 mRNA 치료제에 이르기까지 연구 영역을 넓혀가고 있습니다.</p>
+        <p>mRNA 의약품의 성능은 mRNA 자체 설계와 이를 체내로 전달하는 지질나노입자가 함께 결정합니다. 이에 저희 연구실은 UTR과 poly(A) tail 등의 mRNA 구조 최적화, dsRNA와 같은 불순물 제어와 품질 평가 기술, 그리고 신규 이온화 지질과 보조 지질의 설계 및 스크리닝을 통한 안전하고 특정 세포나 장기에 표적 가능한 LNP 개발을 함께 연구하고 있습니다. 아울러 비임상 독성평가 연구를 병행함으로써, 유효성과 안전성을 동시에 확보한 플랫폼을 구축하고자 합니다.</p>
+        <p>이러한 연구는 저희 연구실의 힘만으로 이루어지지 않습니다. 국내외 대학, 연구기관, 기업과의 긴밀한 협력을 통해 기초 연구의 성과가 실제 백신과 치료제로 이어질 수 있도록 노력하고 있습니다.</p>
+        <p>사람의 건강에 기여할 수 있는 연구를 함께하고자 하는 분들의 많은 관심과 참여를 환영합니다.</p>
+        <p class="sign">가톨릭대학교 의생명과학과 교수 남재환 드림</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 최근 소식 ===== -->
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">최근 소식</h2>
+    <ul class="news-list" id="latest-news"></ul>
+    <p style="margin-top:16px"><a href="news.html">전체 소식 보기 →</a></p>
+  </div>
+</section>
+
+<!-- ===== 오시는 길 ===== -->
+<section class="section" id="location">
+  <div class="container">
+    <h2 class="section-title">오시는 길</h2>
+    <div class="map-wrap">
+      <!-- 지도: 직접 호스팅한 사이트에서는 Google 지도가 이 자리에 자동으로 삽입됩니다 (config.js 의 mapEmbed). -->
+      <div class="map-box" id="map-embed">
+        <div class="map-fallback">
+          <p class="map-fallback-title">가톨릭대학교 성심관</p>
+          <p>경기도 부천시 원미구 지봉로 43</p>
+          <a class="btn btn-blue" href="#" data-site="mapUrl">Google 지도에서 보기 ↗</a>
+          <p class="map-fallback-note">미리보기 링크에서는 외부 지도를 페이지 안에 넣을 수 없어 버튼으로 표시됩니다.</p>
+        </div>
+      </div>
+      <ul class="info-list">
+        <li><b>주소</b> <span data-site="address"></span></li>
+        <li><b>전화</b> <span data-site="phone"></span></li>
+        <li><b>이메일</b> <span class="sel" data-site="email"></span></li>
+      </ul>
+    </div>
+
+    <h3 class="section-sub">대중교통 이용방법</h3>
+    <div class="grid grid-2 transit">
+      <article class="card transit-card">
+        <span class="line line-1">1호선</span>
+        <div>
+          <h4>지하철 1호선 <em>역곡역 2번 출구</em>에서 하차할 경우</h4>
+          <p class="walk">학교 정문까지 도보 10분</p>
+          <h4>지하철 1호선 <em>소사역 3번 출구</em>에서 하차할 경우</h4>
+          <p class="walk">학교 후문까지 도보 10분</p>
+          <ul>
+            <li>인천역 ↔ 역곡역 : 35분 소요</li>
+            <li>서울역 ↔ 역곡역 : 30분 소요</li>
+            <li>신도림역 ↔ 역곡역 : 15분 소요</li>
+            <li>부평역 ↔ 역곡역 : 15분 소요</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card transit-card">
+        <span class="line line-seohae">서해선</span>
+        <div>
+          <h4>지하철 서해선 <em>소사역 7번 출구</em>에서 하차할 경우</h4>
+          <p class="walk">학교 후문까지 도보 10분</p>
+          <ul>
+            <li>일산역 ↔ 소사역 : 35분 소요</li>
+            <li>김포공항역 ↔ 소사역 : 11분 소요</li>
+            <li>원시역 ↔ 소사역 : 35분 소요</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card transit-card">
+        <span class="line line-town">마을버스</span>
+        <div>
+          <h4>51번, 51-1번, 51-2번 버스를 타고 올 경우</h4>
+          <ul><li>[가톨릭대학교, 역곡도서관] 정류장 하차</li></ul>
+        </div>
+      </article>
+      <article class="card transit-card">
+        <span class="line line-city">시내버스</span>
+        <div>
+          <h4>20번 버스를 타고 올 경우</h4>
+          <ul><li>[가톨릭대학교, 역곡도서관] 정류장 하차</li></ul>
+          <h4>5번, 12번, 52번 버스를 타고 올 경우</h4>
+          <ul>
+            <li>정문 기준 : [역곡2동 행정복지센터입구] 또는 [가톨릭대학교 입구, 보람쉬움아파트] 정류장 하차</li>
+            <li>후문 기준 : [금강맨션] 정류장 하차</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/config.js"></script>
+<script src="data/news.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
