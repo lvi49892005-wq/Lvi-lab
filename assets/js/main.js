@@ -39,7 +39,8 @@
     ["research", "#research", "Research"],
     ["publications", "../publications.html", "Publications"],
     ["members", "#people", "People"],
-    ["join", "#join", "Join Us"]
+    ["join", "#join", "Join Us"],
+    ["location", "#location", "Location"]
   ];
 
   function renderHeader() {

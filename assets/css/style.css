@@ -302,3 +302,9 @@ td.mono small { display: block; color: var(--muted); font-size: .78rem; }
 .line-city { background: var(--line-city); }
 @media (max-width: 560px) { .transit-card { flex-direction: column; gap: 10px; } }
 .grid.transit { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+
+/* ---------- 국문 본문 명조체 ----------
+ * 국문 페이지(html lang="ko")의 본문만 명조체, 제목·메뉴·버튼·표 머리글 등은 고딕체 유지 */
+:root { --font-serif: "Noto Serif KR", "Nanum Myeongjo", "Batang", "AppleMyungjo", serif; }
+html[lang="ko"] body { font-family: var(--font-serif); }
+html[lang="ko"] :is(h1, h2, h3, h4, .site-header, .site-footer, .btn, .chip, .badge, .line, th, .eyebrow, .label, .cv-title, .stats, .year, .search, .pin, .tag-link, .count-line, .research-name) { font-family: var(--font); }
