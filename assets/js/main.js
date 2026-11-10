@@ -21,6 +21,7 @@
     github: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.300-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>',
     homepage: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h3c.3 1.3.8 2.5 1.4 3.6A8 8 0 0 1 5.1 16zm3-8h-3a8 8 0 0 1 4.4-3.6C8.9 5.5 8.4 6.7 8.1 8zM12 20c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h3a8 8 0 0 1-4.4 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4z"/></svg>',
     orcid: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM8.3 17.3H6.7V8.6h1.6v8.7zM7.5 7.7a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm3.2 1h3c2.8 0 4.1 2 4.1 4.3 0 2.5-2 4.3-4.1 4.3h-3V8.7zm1.6 1.4v5.8h1.3c1.900 0 2.6-1.4 2.6-2.9 0-1.6-1-2.9-2.6-2.9h-1.3z"/></svg>',
+    clip: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6.5v10a4.5 4.5 0 0 1-9 0V5a3 3 0 0 1 6 0v10.5a1.5 1.5 0 0 1-3 0V6.5H9v9a3 3 0 0 0 6 0V5a4.5 4.5 0 0 0-9 0v11.5a6 6 0 0 0 12 0v-10h-1.5z"/></svg>',
     email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4 7.3V17h16V7.3l-8 4.9zM19.2 7H4.8L12 11.4 19.2 7z"/></svg>'
   };
 
@@ -250,10 +251,13 @@
   /* ---------- News ---------- */
   const NEWS_CAT = { news: "연구실 소식", seminar: "세미나", recruit: "모집", notice: "공지" };
   function newsItem(n) {
-    const ext = /^https?:\/\//.test(n.link || "");
-    const title = n.link
-      ? `<a href="${ext ? "" : ROOT}${esc(n.link)}"${ext ? ' target="_blank" rel="noopener"' : ""}>${esc(n.title)}${ext ? " ↗" : ""}</a>`
-      : esc(n.title);
+    const ext = !n.id && /^https?:\/\//.test(n.link || "");
+    const clip = n.attachments && n.attachments.length ? ' <span class="clip" title="첨부파일" aria-label="첨부파일">${ICON.clip}</span>' : "";
+    const title = n.id
+      ? `<a href="${ROOT}post.html?id=${encodeURIComponent(n.id)}">${esc(n.title)}</a>${clip}`
+      : n.link
+        ? `<a href="${ext ? "" : ROOT}${esc(n.link)}"${ext ? ' target="_blank" rel="noopener"' : ""}>${esc(n.title)}${ext ? " ↗" : ""}</a>`
+        : esc(n.title);
     return `<li class="news-item${n.pinned ? " pinned" : ""}">
       <time datetime="${esc(n.date)}">${esc(n.date)}</time>
       <span class="badge badge-${n.category}">${NEWS_CAT[n.category] || n.category}</span>
@@ -278,6 +282,68 @@
     }
     const latest = $("#latest-news");          // 메인 페이지 최근 소식
     if (latest && window.NEWS) latest.innerHTML = sortedNews().slice(0, 4).map(newsItem).join("");
+  }
+
+  /* ---------- 게시글 상세 (post.html?id=...) + 댓글(giscus) ---------- */
+  function renderPost() {
+    const box = $("#post");
+    if (!box) return;
+    const id = new URLSearchParams(location.search).get("id");
+    const n = (window.NEWS || []).find((x) => x.id && x.id === id);
+    if (!n) {
+      box.innerHTML = `<p class="empty">게시글을 찾을 수 없습니다.</p><p><a href="news.html">← 목록으로</a></p>`;
+      return;
+    }
+    document.title = `${n.title} | ${S.nameKo}`;
+    const secs = (n.sections || []).map((s) => `<section class="post-sec">
+        <h3>${esc(s.title)}</h3>
+        <ul>${(s.items || []).map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+      </section>`).join("");
+    const files = (n.attachments || []).map((a) => `<li>
+        <span class="clip" aria-hidden="true">${ICON.clip}</span>
+        <a href="${ROOT}${esc(a.file)}" download>${esc(a.name)}</a>
+        <a class="tag-link" href="${ROOT}${esc(a.file)}" target="_blank" rel="noopener">새 창에서 보기</a>
+      </li>`).join("");
+    box.innerHTML = `
+      <p class="post-back"><a href="news.html">← 목록으로</a></p>
+      <header class="post-head">
+        <span class="badge badge-${esc(n.category)}">${NEWS_CAT[n.category] || esc(n.category)}</span>
+        <h1>${esc(n.title)}</h1>
+        <time datetime="${esc(n.date)}">${esc(n.date)}</time>
+      </header>
+      ${n.body ? `<p class="post-lead">${esc(n.body)}</p>` : ""}
+      ${secs ? `<div class="post-secs">${secs}</div>` : ""}
+      ${files ? `<div class="post-files"><h3>첨부파일</h3><ul>${files}</ul></div>` : ""}
+      ${n.image ? `<figure class="post-figure"><img src="${ROOT}${esc(n.image)}" alt="${esc(n.title)} 공고 포스터" loading="lazy"></figure>` : ""}
+      ${n.link && /^https?:\/\//.test(n.link) ? `<p><a href="${esc(n.link)}" target="_blank" rel="noopener">관련 링크 ↗</a></p>` : ""}
+      <section class="post-comments" id="comments">
+        <h2 class="section-title">댓글</h2>
+        <div class="giscus"></div>
+      </section>`;
+    loadComments(n.id);
+  }
+
+  function loadComments(term) {
+    const holder = document.querySelector("#comments .giscus");
+    const G = S.giscus || {};
+    if (!holder) return;
+    if (!G.repo || !G.repoId || !G.categoryId) {
+      holder.innerHTML = `<p class="empty">댓글 기능을 준비하고 있습니다.</p>`;
+      return;
+    }
+    const sc = document.createElement("script");
+    sc.src = "https://giscus.app/client.js";
+    const attrs = {
+      "data-repo": G.repo, "data-repo-id": G.repoId,
+      "data-category": G.category || "Announcements", "data-category-id": G.categoryId,
+      "data-mapping": "specific", "data-term": term, "data-strict": "1",
+      "data-reactions-enabled": "1", "data-emit-metadata": "0", "data-input-position": "top",
+      "data-theme": "preferred_color_scheme", "data-lang": "ko", "data-loading": "lazy"
+    };
+    Object.entries(attrs).forEach(([k, v]) => sc.setAttribute(k, v));
+    sc.crossOrigin = "anonymous";
+    sc.async = true;
+    holder.appendChild(sc);
   }
 
   /* ---------- Patents & Awards ---------- */
@@ -354,6 +420,7 @@
   renderMembers();
   renderAlumni();
   renderNews();
+  renderPost();
   renderPatents();
   setupReveal();
 

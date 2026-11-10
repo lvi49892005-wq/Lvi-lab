@@ -16,5 +16,13 @@ window.SITE = {
   mapEmbed: "https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EB%B6%80%EC%B2%9C%EC%8B%9C%20%EC%9B%90%EB%AF%B8%EA%B5%AC%20%EC%A7%80%EB%B4%89%EB%A1%9C%2043%20%EA%B0%80%ED%86%A8%EB%A6%AD%EB%8C%80%ED%95%99%EA%B5%90%20%EC%84%B1%EC%8B%AC%EA%B4%80&z=16&output=embed",
   github: "",                              // 연구실 GitHub (없으면 빈 문자열 "")
   scholar: "https://scholar.google.com/citations?user=0KNsVokAAAAJ&hl=ko",
+  /* 게시글 댓글 (giscus · GitHub Discussions). categoryId 를 넣으면 댓글 창이 나타납니다.
+   * 값은 https://giscus.app 에서 저장소와 카테고리를 고르면 아래쪽 코드에 나옵니다. */
+  giscus: {
+    repo: "lvi49892005-wq/Lvi-lab",
+    repoId: "R_kgDOVpF1pQ",
+    category: "Announcements",
+    categoryId: ""
+  },
   year: new Date().getFullYear()
 };

@@ -3,21 +3,43 @@
  *  category: "news"(연구실 소식) | "seminar"(세미나) | "recruit"(모집) | "notice"(공지)
  *  date: "YYYY-MM-DD" — 최신순 자동 정렬
  *  pinned: true 이면 목록 상단 고정
+ *  id 가 있으면 제목을 눌렀을 때 상세 페이지(post.html?id=...)로 이동하고 댓글을 달 수 있습니다.
+ *    sections: [{ title, items: [...] }]  상세 내용 / image: 포스터 이미지 / attachments: 첨부파일
+ *  id 가 없고 link 가 있으면 그 주소로 이동합니다 (외부 기사 등).
  * ========================================================= */
 window.NEWS = [
   
   {
     date: "2026-11-10", category: "recruit", pinned: true,
+    id: "2027-graduate-recruitment",
     title: "2027 전기 및 후기 대학원생 모집",
     body: "가톨릭대학교 의생명과학과 남재환 교수님 - 화학과 이기연 교수님 공동지도교수로 유기합성과 mRNA 백신 전달체에 대해 연구할 대학원생을 모집합니다. 자세한 내용은 공고문을 확인해주세요.",
-    link: "join.html"
+    // 상세 페이지 내용 (공고문 PDF 내용을 옮김)
+    sections: [
+      { title: "개요", items: ["mRNA 백신의 핵심 중 하나인 지질나노입자를 유기합성부터 체계적으로 배울 대학원생을 모집합니다.", "의생명과학과 남재환 교수님 – 화학과 이기연 교수님 공동 지도"] },
+      { title: "모집기간", items: ["2026. 11. 11(수) ~ 인원 충족 시", "면담일자: 2026. 11. 13(금) ※ 추후 교수님과 논의 하에 별도 면담 가능"] },
+      { title: "모집인원 및 지원자격", items: ["0 명 – 27년 1학기 또는 2학기 입학", "학부 4학년 이상", "화학과, BMCE, 생명공학, 의생명과학 전공"] },
+      { title: "제출서류", items: ["CV 1부", "성적증명서 1부", "지원 동기, 관심 분야를 포함한 간단한 자기소개서 (Word 기본 레이아웃, 맑은 고딕, 12pt, A4 1장 이내)"] },
+      { title: "지원 방법", items: ["CV 보낼 곳: lvi4989.2005@gmail.com"] }
+    ],
+    image: "assets/files/2027-graduate-recruitment.webp",
+    attachments: [{ name: "2027 대학원생 모집 공고문 (PDF)", file: "assets/files/2027-graduate-recruitment.pdf" }]
   },
   
   {
     date: "2026-11-10", category: "recruit", pinned: true,
+    id: "2027-undergraduate-intern-recruitment",
     title: "2027 전기 학부연구생 모집",
-    body: "연구실에서 함께할 학부연구생을 모집합니다. 자세한 내용은 Join Us 페이지를 참고하세요.",
-    link: "join.html"
+    body: "연구실에서 함께할 학부연구생을 모집합니다. 자세한 내용은 공고문을 확인해주세요.",
+    sections: [
+      { title: "모집기간", items: ["2026. 11. 13(금) ~ 2026. 11. 23(월)", "면담일자: 2026. 11. 27(금) ※ 대략적인 날짜로 추후 변동 가능"] },
+      { title: "인턴 시작일", items: ["2027. 01. 04(월) ~"] },
+      { title: "모집인원 및 지원자격", items: ["0 명", "3학년 1학기를 마친 관련 전공 학생"] },
+      { title: "제출서류", items: ["CV 1부", "성적증명서 1부", "지원 동기, 관심 분야를 포함한 간단한 자기소개서 (Word 기본 레이아웃, 맑은 고딕, 12pt, A4 1장 이내)"] },
+      { title: "지원 방법", items: ["CV 보낼 곳: lvi4989.2005@gmail.com"] }
+    ],
+    image: "assets/files/2027-undergraduate-intern-recruitment.webp",
+    attachments: [{ name: "2027 학부연구생 모집 공고문 (PDF)", file: "assets/files/2027-undergraduate-intern-recruitment.pdf" }]
   },
 
   {

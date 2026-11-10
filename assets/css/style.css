@@ -323,3 +323,24 @@ html[lang="ko"] :is(h1, h2, h3, h4, .site-header, .site-footer, .btn, .chip, .ba
 .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 @media print { .reveal { opacity: 1 !important; transform: none !important; } }
+
+/* ---------- 게시글 상세 (post.html) ---------- */
+.post { max-width: 860px; }
+.post-back { margin: 0 0 18px; font-size: .9rem; }
+.post-head { border-bottom: 2px solid var(--border); padding-bottom: 16px; margin-bottom: 22px; }
+.post-head h1 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 10px 0 6px; }
+.post-head time { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.post-lead { font-size: 1.05rem; }
+.post-secs { display: grid; gap: 18px; margin: 26px 0; }
+.post-sec h3 { font-size: 1rem; color: var(--heading); margin: 0 0 6px; }
+.post-sec ul { margin: 0; padding-left: 1.2em; }
+.post-sec li { margin: 2px 0; }
+.post-files { background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin: 24px 0; }
+.post-files h3 { font-size: .95rem; margin: 0 0 8px; }
+.post-files ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.post-files li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.clip svg { width: 15px; height: 15px; fill: currentColor; vertical-align: -2px; color: var(--muted); }
+.news-title .clip { margin-left: 4px; }
+.post-figure { margin: 28px 0; }
+.post-figure img { width: 100%; max-width: 640px; height: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+.post-comments { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border); }
