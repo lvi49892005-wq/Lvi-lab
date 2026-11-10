@@ -355,4 +355,37 @@
   renderAlumni();
   renderNews();
   renderPatents();
+  setupReveal();
+
+  /* ---------- 스크롤 페이드 인 ----------
+   * 처음 화면에 보이는 요소는 그대로 두고, 아래쪽 요소만 스크롤로 들어올 때 나타나게 합니다.
+   * '동작 줄이기' 설정 사용자, IntersectionObserver 미지원 브라우저에서는 적용하지 않습니다. */
+  function setupReveal() {
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) return;
+    const SEL = [
+      ".section-title", ".section-sub", ".lead", ".greeting", ".map-wrap", ".stats", ".filter-row",
+      ".card", ".member", ".year-group", ".news-item", ".table-wrap", ".steps li", ".checklist", ".cta", ".count-line"
+    ].join(",");
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        en.target.classList.add("is-visible");
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+    document.querySelectorAll(SEL).forEach((el) => {
+      if (el.closest(".site-header, .site-footer, .hero")) return;
+      if (el.parentElement && el.parentElement.closest(".reveal")) return;   // 바깥 요소가 이미 애니메이션 대상
+      if (el.getBoundingClientRect().top < vh) return;                        // 첫 화면에 보이는 요소는 그대로
+      // 같은 줄에 놓인 카드들은 조금씩 늦게 나타나게 (최대 3단계)
+      const sibs = el.parentElement ? [...el.parentElement.children] : [];
+      const i = sibs.indexOf(el);
+      if (sibs.length > 1 && i > 0) el.style.transitionDelay = `${Math.min(i % 4, 3) * 70}ms`;
+      el.classList.add("reveal");
+      io.observe(el);
+    });
+  }
 })();

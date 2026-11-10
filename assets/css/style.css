@@ -317,3 +317,9 @@ html[lang="ko"] :is(h1, h2, h3, h4, .site-header, .site-footer, .btn, .chip, .ba
 :root[data-theme="dark"] { --logo-pad: 3px 6px; }
 .brand-logo { height: 46px; width: auto; flex: none; display: block; background: var(--logo-bg); border-radius: 6px; padding: var(--logo-pad); box-sizing: content-box; }
 @media (max-width: 1000px) { .brand-logo { height: 40px; } }
+
+/* ---------- 스크롤 페이드 인 (main.js 의 setupReveal 이 .reveal 을 붙임) ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; will-change: opacity, transform; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+@media print { .reveal { opacity: 1 !important; transform: none !important; } }
