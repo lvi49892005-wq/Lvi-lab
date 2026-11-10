@@ -98,7 +98,7 @@ code { font-size: .9em; background: var(--bg-soft); padding: 1px 5px; border-rad
 .nav-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; flex: none; }
 .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .nav-toggle { display: block; }
   .site-nav { display: none; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: var(--surface); border-bottom: 1px solid var(--border); padding: 8px max(20px, env(safe-area-inset-right, 0px)) 16px max(20px, env(safe-area-inset-left, 0px)); }
   .site-header.open .site-nav { display: flex; }
@@ -316,7 +316,7 @@ html[lang="ko"] :is(h1, h2, h3, h4, .site-header, .site-footer, .btn, .chip, .ba
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --logo-pad: 3px 6px; } }
 :root[data-theme="dark"] { --logo-pad: 3px 6px; }
 .brand-logo { height: 46px; width: auto; flex: none; display: block; background: var(--logo-bg); border-radius: 6px; padding: var(--logo-pad); box-sizing: content-box; }
-@media (max-width: 1000px) { .brand-logo { height: 40px; } }
+@media (max-width: 1200px) { .brand-logo { height: 40px; } }
 
 /* ---------- 스크롤 페이드 인 (main.js 의 setupReveal 이 .reveal 을 붙임) ---------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; will-change: opacity, transform; }
@@ -344,3 +344,35 @@ html[lang="ko"] :is(h1, h2, h3, h4, .site-header, .site-footer, .btn, .chip, .ba
 .post-figure { margin: 28px 0; }
 .post-figure img { width: 100%; max-width: 640px; height: auto; border: 1px solid var(--border); border-radius: var(--radius); }
 .post-comments { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border); }
+
+/* ---------- 사진 게시판 (gallery.html) ---------- */
+.album { margin-bottom: 48px; }
+.album-head { display: grid; gap: 2px; margin-bottom: 14px; }
+.album-head time { color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+.album-head h3 { font-size: 1.2rem; margin: 0; color: var(--text); }
+.album-head p { margin: 2px 0 0; color: var(--muted); }
+.g-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 10px; }
+.g-tile { display: block; width: 100%; padding: 0; border: 0; border-radius: 8px; overflow: hidden; cursor: zoom-in; background: var(--bg-soft); aspect-ratio: 4 / 3; }
+.g-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.g-tile:hover img { transform: scale(1.04); }
+.gallery-empty { border: 1px dashed var(--border); border-radius: var(--radius); padding: 36px 24px; text-align: center; color: var(--muted); }
+.gallery-empty p { margin: 4px 0; }
+.lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(8, 12, 20, .92); display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+.lightbox[hidden] { display: none; }
+.lightbox figure { margin: 0; grid-column: 2; display: grid; justify-items: center; gap: 10px; min-width: 0; }
+.lightbox img { max-width: 100%; max-height: calc(100vh - 120px); object-fit: contain; border-radius: 6px; }
+.lightbox figcaption { color: #e4e8ef; font-size: .9rem; text-align: center; }
+.lb-nav, .lb-close { background: rgba(255, 255, 255, .12); color: #ffffff; border: 0; border-radius: 999px; width: 44px; height: 44px; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.lb-nav:hover, .lb-close:hover { background: rgba(255, 255, 255, .25); }
+.lb-prev { grid-column: 1; }
+.lb-next { grid-column: 3; }
+.lb-close { position: absolute; top: max(14px, env(safe-area-inset-top, 0px)); right: max(14px, env(safe-area-inset-right, 0px)); }
+body.lb-open { overflow: hidden; }
+@media (max-width: 560px) { .lb-nav { width: 36px; height: 36px; font-size: 1.4rem; } }
+
+/* ---------- 헤더: 메뉴 8개가 한 줄에 들어가도록 ---------- */
+.site-header .container { max-width: 1280px; }
+.brand { flex: none; }
+.brand-text { white-space: nowrap; }
+@media (min-width: 1201px) { .site-nav a { padding: 8px 8px; font-size: .88rem; } .site-nav .lang { margin-left: 6px; } }

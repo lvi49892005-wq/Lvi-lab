@@ -33,6 +33,7 @@
     ["members", "members.html", "Members"],
     ["patents", "patents-awards.html", "Patents & Awards"],
     ["news", "news.html", "News & Notice"],
+    ["gallery", "gallery.html", "Gallery"],
     ["join", "join.html", "Join Us"]
   ];
   const NAV_EN = [
@@ -40,6 +41,7 @@
     ["research", "#research", "Research"],
     ["publications", "../publications.html", "Publications"],
     ["members", "#people", "People"],
+    ["gallery", "../gallery.html", "Gallery"],
     ["join", "#join", "Join Us"],
     ["location", "#location", "Location"]
   ];
@@ -346,6 +348,68 @@
     holder.appendChild(sc);
   }
 
+  /* ---------- Gallery (data/gallery.js) ---------- */
+  function renderGallery() {
+    const wrap = $("#gallery");
+    if (!wrap) return;
+    const albums = [...(window.GALLERY || [])].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    if (!albums.length) {
+      wrap.innerHTML = `<div class="gallery-empty"><p><b>아직 올라온 사진이 없습니다.</b></p>
+        <p>사진을 올리는 방법은 저장소의 README 「사진 게시판」 항목을 참고해 주세요.</p></div>`;
+      return;
+    }
+    const all = [];   // 라이트박스 순서
+    wrap.innerHTML = albums.map((al) => {
+      const photos = (al.photos || []).map((ph) => typeof ph === "string" ? { src: ph, caption: "" } : ph);
+      const tiles = photos.map((ph) => {
+        const i = all.push({ src: ROOT + ph.src, caption: ph.caption || "", album: al.title, date: al.date }) - 1;
+        const alt = ph.caption || `${al.title} 사진`;
+        return `<li><button type="button" class="g-tile" data-i="${i}" aria-label="${esc(alt)} 크게 보기">
+          <img src="${ROOT}${esc(ph.src)}" alt="${esc(alt)}" loading="lazy"></button></li>`;
+      }).join("");
+      return `<section class="album">
+        <header class="album-head">
+          <time datetime="${esc(al.date)}">${esc(al.date)}</time>
+          <h3>${esc(al.title)}</h3>
+          ${al.desc ? `<p>${esc(al.desc)}</p>` : ""}
+        </header>
+        <ul class="g-grid">${tiles}</ul>
+      </section>`;
+    }).join("");
+
+    // 라이트박스
+    const lb = document.createElement("div");
+    lb.className = "lightbox"; lb.hidden = true;
+    lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "사진 크게 보기");
+    lb.innerHTML = `<button type="button" class="lb-close" aria-label="닫기">×</button>
+      <button type="button" class="lb-nav lb-prev" aria-label="이전 사진">‹</button>
+      <figure><img alt=""><figcaption></figcaption></figure>
+      <button type="button" class="lb-nav lb-next" aria-label="다음 사진">›</button>`;
+    document.body.appendChild(lb);
+    const img = lb.querySelector("img"), cap = lb.querySelector("figcaption");
+    let cur = 0, opener = null;
+    const show = (i) => {
+      cur = (i + all.length) % all.length;
+      const it = all[cur];
+      img.src = it.src; img.alt = it.caption || `${it.album} 사진`;
+      cap.textContent = `${it.album} · ${it.date}${it.caption ? " — " + it.caption : ""}  (${cur + 1}/${all.length})`;
+    };
+    const open = (i, btn) => { opener = btn; show(i); lb.hidden = false; document.body.classList.add("lb-open"); lb.querySelector(".lb-close").focus(); };
+    const close = () => { lb.hidden = true; document.body.classList.remove("lb-open"); if (opener) opener.focus(); };
+    wrap.addEventListener("click", (e) => { const t = e.target.closest(".g-tile"); if (t) open(+t.dataset.i, t); });
+    lb.querySelector(".lb-close").addEventListener("click", close);
+    lb.querySelector(".lb-prev").addEventListener("click", () => show(cur - 1));
+    lb.querySelector(".lb-next").addEventListener("click", () => show(cur + 1));
+    lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+    document.addEventListener("keydown", (e) => {
+      if (lb.hidden) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") show(cur - 1);
+      else if (e.key === "ArrowRight") show(cur + 1);
+    });
+    if (all.length < 2) lb.querySelectorAll(".lb-nav").forEach((b) => (b.hidden = true));
+  }
+
   /* ---------- Patents & Awards ---------- */
   const PAT_STATUS = { registered: "등록", applied: "출원", pct: "PCT" };
   function renderPatents() {
@@ -421,6 +485,7 @@
   renderAlumni();
   renderNews();
   renderPost();
+  renderGallery();
   renderPatents();
   setupReveal();
 
@@ -432,7 +497,7 @@
     if (reduce || !("IntersectionObserver" in window)) return;
     const SEL = [
       ".section-title", ".section-sub", ".lead", ".greeting", ".map-wrap", ".stats", ".filter-row",
-      ".card", ".member", ".year-group", ".news-item", ".table-wrap", ".steps li", ".checklist", ".cta", ".count-line"
+      ".card", ".member", ".year-group", ".news-item", ".album", ".table-wrap", ".steps li", ".checklist", ".cta", ".count-line"
     ].join(",");
     const vh = window.innerHeight || document.documentElement.clientHeight;
     const io = new IntersectionObserver((entries) => {
