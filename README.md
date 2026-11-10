@@ -66,3 +66,19 @@ Google 지도에서 위치 검색 → 공유 → **지도 퍼가기** → HTML �
 
 이후에는 GitHub 웹에서 파일을 열고 연필(✏️) 아이콘을 눌러 바로 고칠 수 있고, 저장(Commit)하면 1~2분 안에 사이트에 반영됩니다.
 학교 웹서버에 올릴 때도 폴더 전체를 그대로 업로드하면 됩니다.
+
+## 5. 논문 자동 확인 (PubMed, 3개월마다)
+
+`.github/workflows/pubmed-update.yml` 이 1·4·7·10월 1일에 PubMed를 검색해서,
+홈페이지에 없는 남재환 교수님 논문이 있으면 **확인용 Pull Request** 를 만듭니다.
+
+1. 저장소 **Pull requests** 탭에서 "PubMed 새 논문 N편" PR을 엽니다.
+2. 목록이 교수님 논문이 맞는지 확인합니다.
+   - 아니면 PR을 닫고(Close) 그 PMID를 `data/pubmed-exclude.txt` 에 한 줄 추가하세요.
+3. 교신저자 논문이면 **Files changed** 탭 → 연필 아이콘으로 `Nam JH` 뒤에 `*` 를 붙입니다.
+4. **Merge pull request** → **Confirm merge** 를 누르면 1~2분 뒤 홈페이지에 반영됩니다.
+
+- 바로 확인하고 싶으면: **Actions** 탭 → "PubMed 논문 자동 확인" → **Run workflow**
+- 철회 논문·정오표는 자동으로 건너뛰고, PR 본문에 "건너뛴 항목"으로 표시됩니다.
+- PubMed에 없는 국내 학술지·학회 발표, 특허는 자동으로 추가되지 않으니 직접 추가하세요.
+- 검색어는 `scripts/update_pubmed.py` 맨 위 `QUERY` 에서 바꿀 수 있습니다.
