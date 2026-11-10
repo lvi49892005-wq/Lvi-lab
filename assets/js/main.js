@@ -359,18 +359,23 @@
       return;
     }
     const all = [];   // 라이트박스 순서
-    wrap.innerHTML = albums.map((al) => {
+    const jump = albums.length > 3
+      ? `<nav class="g-jump chips" aria-label="연도 바로가기">${albums.map((al, k) =>
+          `<a class="chip" href="#album-${k}">${esc(al.title)}</a>`).join("")}</nav>` : "";
+    wrap.innerHTML = jump + albums.map((al, k) => {
       const photos = (al.photos || []).map((ph) => typeof ph === "string" ? { src: ph, caption: "" } : ph);
       const tiles = photos.map((ph) => {
-        const i = all.push({ src: ROOT + ph.src, caption: ph.caption || "", album: al.title, date: al.date }) - 1;
+        const i = all.push({ src: ROOT + ph.src, caption: ph.caption || "", album: al.title }) - 1;
         const alt = ph.caption || `${al.title} 사진`;
         return `<li><button type="button" class="g-tile" data-i="${i}" aria-label="${esc(alt)} 크게 보기">
-          <img src="${ROOT}${esc(ph.src)}" alt="${esc(alt)}" loading="lazy"></button></li>`;
+          <img src="${ROOT}${esc(ph.thumb || ph.src)}" alt="${esc(alt)}" loading="lazy"></button>
+          ${ph.caption ? `<p class="g-cap">${esc(ph.caption)}</p>` : ""}</li>`;
       }).join("");
-      return `<section class="album">
+      const showDate = al.date && !String(al.title).includes(String(al.date));
+      return `<section class="album" id="album-${k}">
         <header class="album-head">
-          <time datetime="${esc(al.date)}">${esc(al.date)}</time>
-          <h3>${esc(al.title)}</h3>
+          ${showDate ? `<time datetime="${esc(al.date)}">${esc(al.date)}</time>` : ""}
+          <h3>${esc(al.title)} <span class="g-count">${photos.length}장</span></h3>
           ${al.desc ? `<p>${esc(al.desc)}</p>` : ""}
         </header>
         <ul class="g-grid">${tiles}</ul>
@@ -392,7 +397,7 @@
       cur = (i + all.length) % all.length;
       const it = all[cur];
       img.src = it.src; img.alt = it.caption || `${it.album} 사진`;
-      cap.textContent = `${it.album} · ${it.date}${it.caption ? " — " + it.caption : ""}  (${cur + 1}/${all.length})`;
+      cap.textContent = `${it.caption ? it.caption + " · " : ""}${it.album}  (${cur + 1}/${all.length})`;
     };
     const open = (i, btn) => { opener = btn; show(i); lb.hidden = false; document.body.classList.add("lb-open"); lb.querySelector(".lb-close").focus(); };
     const close = () => { lb.hidden = true; document.body.classList.remove("lb-open"); if (opener) opener.focus(); };

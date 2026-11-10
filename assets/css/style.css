@@ -376,3 +376,9 @@ body.lb-open { overflow: hidden; }
 .brand { flex: none; }
 .brand-text { white-space: nowrap; }
 @media (min-width: 1201px) { .site-nav a { padding: 8px 8px; font-size: .88rem; } .site-nav .lang { margin-left: 6px; } }
+.g-jump { margin-bottom: 28px; }
+.g-jump .chip { text-decoration: none; }
+.g-jump .chip:hover { border-color: var(--primary); color: var(--primary); }
+.g-count { font-size: .8rem; font-weight: 500; color: var(--muted); margin-left: 4px; }
+.g-cap { margin: 6px 2px 0; font-size: .85rem; color: var(--muted); line-height: 1.4; }
+.album { scroll-margin-top: 90px; }
