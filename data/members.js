@@ -58,7 +58,7 @@ window.MEMBERS = [
   /* ----- 석사과정 ----- */
   { group: "ms", name: "김혜민", nameEn: "Hyemin Kim",   position: "석사과정", positionEn: "M.S. Student", links: {} },
   { group: "ms", name: "신지수", nameEn: "Jisu Shin",    position: "석사과정", positionEn: "M.S. Student", links: {} },
-  { group: "ms", name: "윤상호", nameEn: "Sangho Yoon",  position: "석사과정", positionEn: "M.S. Student", links: {} },
+  { group: "ms", name: "윤상호", nameEn: "Sangho Yun",  position: "석사과정", positionEn: "M.S. Student", links: {} },
   { group: "ms", name: "박예은", nameEn: "Yeeun Park",   position: "석사과정", positionEn: "M.S. Student", links: {} },
   { group: "ms", name: "이승아", nameEn: "Seungah Lee",  position: "석사과정", positionEn: "M.S. Student", links: {} }
 ];
