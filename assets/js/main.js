@@ -123,7 +123,7 @@
 
   /* ---------- Publications ---------- */
   const PUB_TYPE = {
-    journal: ["Journal", "국제 학술지"], conference: ["Conference", "국제 학회"],
+    journal: ["Journal", "국제 학술지"],
     domestic: ["Domestic", "국내 학술지·학회"], book: ["Book", "저서"], preprint: ["Preprint", "프리프린트"]
   };
   function renderPublications() {
@@ -172,7 +172,6 @@
       const c = (t) => data.filter((p) => p.type === t).length;
       stats.innerHTML = `
         <div><b>${c("journal")}</b><span>${en ? "Journal" : "국제 학술지"}</span></div>
-        <div><b>${c("conference")}</b><span>${en ? "Conference" : "국제 학회"}</span></div>
         <div><b>${c("domestic")}</b><span>${en ? "Domestic" : "국내"}</span></div>`;
     }
     draw();
