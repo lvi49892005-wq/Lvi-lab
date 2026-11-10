@@ -16,6 +16,7 @@ window.GALLERY = [
   {
     date: "2026", title: "2026년",
     photos: [
+      { src: "aseets/gallery/2026/2026.11.03.JSV.jpg", thumb: "aseets/gallery/2026/2026.11.03.JSV.jpg", caption: "2026년 일본바이러스학회 (2026.11)" },
       { src: "assets/gallery/2026/2026-02-01.webp", thumb: "assets/gallery/2026/thumbs/2026-02-01.webp", caption: "졸업식 (2026.02)" }
     ]
   },
