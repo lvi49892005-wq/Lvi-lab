@@ -1,7 +1,8 @@
 // Publication list for Jae-Hwan Nam (The Catholic University of Korea)
 // Source: PubMed, query: ("Nam, Jae-Hwan"[Author] OR "Nam, Jae Hwan"[Author]) AND "Catholic University of Korea"[Affiliation], retrieved 2026-11-10
 // Fields copied from PubMed metadata only; missing fields left as empty strings.
-// '*' after Nam JH = corresponding author, marked only where Prof. Nam's CV (2026-08-29) puts '*' next to his name.
+// '*' after Nam JH = corresponding author. Basis (2026-11): PubMed record lists his e-mail (or PMC text names him) -> '*';
+//   PubMed shows another author as the e-mail contact -> no '*'; not determinable from the literature -> as marked in Prof. Nam's CV (2026-08-29).
 // Removed at the lab's request: PMID 39388490 (retracted).
 // Cross-checked against the CV publication list: 95 of 98 found in the CV; not in the CV: PMID 42853072, 42843286, 37863670 (corrigendum).
 
@@ -21,7 +22,7 @@ window.PUBLICATIONS = [
     year: 2026,
     type: "journal",
     title: "Sequence-Aware Antigenic Alignment and SRID Potency Interpretation in Influenza Vaccines",
-    authors: "Jeong O, Kim PK, Oh H, Lee K, Nam JH",
+    authors: "Jeong O, Kim PK, Oh H, Lee K, Nam JH*",
     venue: "Vaccine, 93, 129191",
     doi: "10.1016/j.vaccine.2026.129191",
     pdf: "", code: "", note: "Review"
@@ -141,7 +142,7 @@ window.PUBLICATIONS = [
     year: 2025,
     type: "journal",
     title: "Enhanced subchronic cardiac stress of high doses of a novel SARS-CoV-2 mRNA vaccine candidate in streptozotocin-induced diabetic mice",
-    authors: "Jo H, Yoon S, Cho S, Lee E, Kim N, Choi EB, Park I, Park S, Lee NY, Jeon Y, An HW, Park JW, Keum G, Nam JH, Yun JW",
+    authors: "Jo H, Yoon S, Cho S, Lee E, Kim N, Choi EB, Park I, Park S, Lee NY, Jeon Y, An HW, Park JW, Keum G, Nam JH*, Yun JW",
     venue: "Food and chemical toxicology : an international journal published for the British Industrial Biological Research Association, 208, 115891",
     doi: "10.1016/j.fct.2025.115891",
     pdf: "", code: "", note: ""
@@ -261,7 +262,7 @@ window.PUBLICATIONS = [
     year: 2025,
     type: "journal",
     title: "The therapeutic potential of mRNA-encoded SFTSV human monoclonal antibody encapsulated lipid nanoparticle in vivo",
-    authors: "Lee SY, Lee Y, Oh EY, Lee J, Kim JY, Park SI, Park HJ, Park SH, Choi EJ, Ha D, Oh A, Kim A, Ro HJ, Bang YJ, Kwak HW, Park HJ, Kim DH, Kim D, Lee SM, Cho NH, Nam JH",
+    authors: "Lee SY, Lee Y, Oh EY, Lee J, Kim JY, Park SI, Park HJ, Park SH, Choi EJ, Ha D, Oh A, Kim A, Ro HJ, Bang YJ, Kwak HW, Park HJ, Kim DH, Kim D, Lee SM, Cho NH, Nam JH*",
     venue: "Journal of controlled release : official journal of the Controlled Release Society, 382, 113735",
     doi: "10.1016/j.jconrel.2025.113735",
     pdf: "", code: "", note: ""
@@ -371,7 +372,7 @@ window.PUBLICATIONS = [
     year: 2023,
     type: "journal",
     title: "Corrigendum to \"Recombinant measles virus encoding the spike protein of SARS-CoV-2 efficiently induces Th1 responses and neutralizing antibodies that block SARS-CoV-2 variants\" [Vaccine 41(11) (2023) 1892-1901]",
-    authors: "Kwak HW, Park HJ, Jung SY, Oh EY, Park SI, Kim Y, Park HJ, Park S, Kim YJ, Ko HL, Lee JA, Won H, Hwang YH, Kim SY, Kim SE, Bae SE, Yoon M, Kim JO, Song M, Lee SJ, Seo KW, Lee K, Kim D, Kim H, Lee SM, Hong SH, Nam JH",
+    authors: "Kwak HW, Park HJ, Jung SY, Oh EY, Park SI, Kim Y, Park HJ, Park S, Kim YJ, Ko HL, Lee JA, Won H, Hwang YH, Kim SY, Kim SE, Bae SE, Yoon M, Kim JO, Song M, Lee SJ, Seo KW, Lee K, Kim D, Kim H, Lee SM, Hong SH, Nam JH*",
     venue: "Vaccine, 41(47), 7033",
     doi: "10.1016/j.vaccine.2023.10.033",
     pdf: "", code: "", note: "Erratum"
@@ -411,7 +412,7 @@ window.PUBLICATIONS = [
     year: 2023,
     type: "journal",
     title: "Analyzing immune responses to varied mRNA and protein vaccine sequences",
-    authors: "Park HJ, Bang YJ, Kwon SP, Kwak W, Park SI, Roh G, Bae SH, Kim JY, Kwak HW, Kim Y, Yoo S, Kim D, Keum G, Bang EK, Hong SH, Nam JH",
+    authors: "Park HJ, Bang YJ, Kwon SP, Kwak W, Park SI, Roh G, Bae SH, Kim JY, Kwak HW, Kim Y, Yoo S, Kim D, Keum G, Bang EK, Hong SH, Nam JH*",
     venue: "NPJ vaccines, 8(1), 84",
     doi: "10.1038/s41541-023-00684-0",
     pdf: "", code: "", note: ""
@@ -421,7 +422,7 @@ window.PUBLICATIONS = [
     year: 2023,
     type: "journal",
     title: "Heterologous vaccination utilizing viral vector and protein platforms confers complete protection against SFTSV",
-    authors: "Kim JY, Jeon K, Hong JJ, Park SI, Cho H, Park HJ, Kwak HW, Park HJ, Bang YJ, Lee YS, Bae SH, Kim SH, Hwang KA, Jung DI, Cho SH, Seo SH, Kim G, Oh H, Lee HY, Kim KH, Lim HY, Jeon P, Lee JY, Chung J, Lee SM, Ko HL, Song M, Cho NH, Lee YS, Hong SH, Nam JH",
+    authors: "Kim JY, Jeon K, Hong JJ, Park SI, Cho H, Park HJ, Kwak HW, Park HJ, Bang YJ, Lee YS, Bae SH, Kim SH, Hwang KA, Jung DI, Cho SH, Seo SH, Kim G, Oh H, Lee HY, Kim KH, Lim HY, Jeon P, Lee JY, Chung J, Lee SM, Ko HL, Song M, Cho NH, Lee YS, Hong SH, Nam JH*",
     venue: "Scientific reports, 13(1), 8189",
     doi: "10.1038/s41598-023-35328-9",
     pdf: "", code: "", note: ""
@@ -521,7 +522,7 @@ window.PUBLICATIONS = [
     year: 2020,
     type: "journal",
     title: "Inactivated influenza vaccine formulated with single-stranded RNA-based adjuvant confers mucosal immunity and cross-protection against influenza virus infection",
-    authors: "Kim YH, Bang YJ, Park HJ, Li Ko H, Park SI, Hwang KA, Kim H, Nam JH",
+    authors: "Kim YH, Bang YJ, Park HJ, Li Ko H, Park SI, Hwang KA, Kim H, Nam JH*",
     venue: "Vaccine, 38(39), 6141-6152",
     doi: "10.1016/j.vaccine.2020.07.022",
     pdf: "", code: "", note: ""
@@ -531,7 +532,7 @@ window.PUBLICATIONS = [
     year: 2020,
     type: "journal",
     title: "Insight into the relationship between obesity-induced low-level chronic inflammation and COVID-19 infection",
-    authors: "Kim J, Nam JH",
+    authors: "Kim J, Nam JH*",
     venue: "International journal of obesity (2005), 44(7), 1541-1542",
     doi: "10.1038/s41366-020-0602-y",
     pdf: "", code: "", note: ""
@@ -581,7 +582,7 @@ window.PUBLICATIONS = [
     year: 2020,
     type: "journal",
     title: "What we know and what we need to know about adenovirus 36-induced obesity",
-    authors: "Kim J, Na H, Kim JA, Nam JH",
+    authors: "Kim J, Na H, Kim JA, Nam JH*",
     venue: "International journal of obesity (2005), 44(6), 1197-1209",
     doi: "10.1038/s41366-020-0536-4",
     pdf: "", code: "", note: "Review"
@@ -591,7 +592,7 @@ window.PUBLICATIONS = [
     year: 2019,
     type: "journal",
     title: "Comprehensive Analysis of the Safety Profile of a Single-Stranded RNA Nano-Structure Adjuvant",
-    authors: "Park HJ, Ko HL, Won DH, Hwang DB, Shin YS, Kwak HW, Kim HJ, Yun JW, Nam JH",
+    authors: "Park HJ, Ko HL, Won DH, Hwang DB, Shin YS, Kwak HW, Kim HJ, Yun JW, Nam JH*",
     venue: "Pharmaceutics, 11(9)",
     doi: "10.3390/pharmaceutics11090464",
     pdf: "", code: "", note: ""
@@ -601,7 +602,7 @@ window.PUBLICATIONS = [
     year: 2019,
     type: "journal",
     title: "Cricket paralysis virus internal ribosome entry site-derived RNA promotes conventional vaccine efficacy by enhancing a balanced Th1/Th2 response",
-    authors: "Kwak HW, Park HJ, Ko HL, Park H, Cha MH, Lee SM, Kang KW, Kim RH, Ryu SR, Kim HJ, Kim JO, Song M, Kim H, Jeong DG, Shin EC, Nam JH",
+    authors: "Kwak HW, Park HJ, Ko HL, Park H, Cha MH, Lee SM, Kang KW, Kim RH, Ryu SR, Kim HJ, Kim JO, Song M, Kim H, Jeong DG, Shin EC, Nam JH*",
     venue: "Vaccine, 37(36), 5191-5202",
     doi: "10.1016/j.vaccine.2019.07.070",
     pdf: "", code: "", note: ""
@@ -641,7 +642,7 @@ window.PUBLICATIONS = [
     year: 2018,
     type: "journal",
     title: "Development and validation of multiplex real-time PCR assays for rapid detection of cytomegalovirus, Epstein-Barr virus, and polyomavirus BK in whole blood from transplant candidates",
-    authors: "Hwang KA, Ahn JH, Nam JH",
+    authors: "Hwang KA, Ahn JH, Nam JH*",
     venue: "Journal of microbiology (Seoul, Korea), 56(8), 593-599",
     doi: "10.1007/s12275-018-8273-2",
     pdf: "", code: "", note: ""
@@ -651,7 +652,7 @@ window.PUBLICATIONS = [
     year: 2018,
     type: "journal",
     title: "Heterologous prime-boost vaccination with adenoviral vector and protein nanoparticles induces both Th1 and Th2 responses against Middle East respiratory syndrome coronavirus",
-    authors: "Jung SY, Kang KW, Lee EY, Seo DW, Kim HL, Kim H, Kwon T, Park HL, Kim H, Lee SM, Nam JH",
+    authors: "Jung SY, Kang KW, Lee EY, Seo DW, Kim HL, Kim H, Kwon T, Park HL, Kim H, Lee SM, Nam JH*",
     venue: "Vaccine, 36(24), 3468-3476",
     doi: "10.1016/j.vaccine.2018.04.082",
     pdf: "", code: "", note: ""
@@ -681,7 +682,7 @@ window.PUBLICATIONS = [
     year: 2017,
     type: "journal",
     title: "Macrophage-derived insulin-like growth factor-1 affects influenza vaccine efficacy through the regulation of immune cell homeostasis",
-    authors: "Yoon IS, Park H, Kwak HW, Woo Jung Y, Nam JH",
+    authors: "Yoon IS, Park H, Kwak HW, Woo Jung Y, Nam JH*",
     venue: "Vaccine, 35(36), 4687-4694",
     doi: "10.1016/j.vaccine.2017.07.037",
     pdf: "", code: "", note: ""
@@ -1305,7 +1306,7 @@ window.PUBLICATIONS = [
     year: 2008,
     type: "journal",
     title: "Real-time RT-PCR of Hantaan virus RNA used for the detection of virus response to antiviral drugs",
-    authors: "Nam JH, Yu CH, Hwang KA, Ju YR",
+    authors: "Nam JH*, Yu CH, Hwang KA, Ju YR",
     venue: "Acta virologica, 52(1), 67-70",
     doi: "",
     pdf: "", code: "", note: ""
@@ -1505,7 +1506,7 @@ window.PUBLICATIONS = [
     year: 2003,
     type: "journal",
     title: "Expression of interferon inducible genes following Hantaan virus infection as a mechanism of resistance in A549 cells",
-    authors: "Nam JH, Hwang KA, Yu CH, Kang TH, Shin JY, Choi WY, Kim IB, Joo YR, Cho HW, Park KY",
+    authors: "Nam JH*, Hwang KA, Yu CH, Kang TH, Shin JY, Choi WY, Kim IB, Joo YR, Cho HW, Park KY",
     venue: "Virus genes, 26(1), 31-8",
     doi: "10.1023/a:1022373904357",
     pdf: "", code: "", note: ""
@@ -1515,7 +1516,7 @@ window.PUBLICATIONS = [
     year: 2002,
     type: "journal",
     title: "Application of cDNA microarray technique to detection of gene expression in host cells infected with viruses",
-    authors: "Nam JH, Yu CH, Hwang KA, Kim S, Ahn SH, Shin JY, Choi WY, Joo YR, Park KY",
+    authors: "Nam JH*, Yu CH, Hwang KA, Kim S, Ahn SH, Shin JY, Choi WY, Joo YR, Park KY",
     venue: "Acta virologica, 46(3), 141-6",
     doi: "",
     pdf: "", code: "", note: ""
