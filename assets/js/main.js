@@ -340,7 +340,7 @@
       "data-category": G.category || "Announcements", "data-category-id": G.categoryId,
       "data-mapping": "specific", "data-term": term, "data-strict": "1",
       "data-reactions-enabled": "1", "data-emit-metadata": "0", "data-input-position": "top",
-      "data-theme": "preferred_color_scheme", "data-lang": "ko", "data-loading": "lazy"
+      "data-theme": "light", "data-lang": "ko", "data-loading": "lazy"
     };
     Object.entries(attrs).forEach(([k, v]) => sc.setAttribute(k, v));
     sc.crossOrigin = "anonymous";

@@ -37,34 +37,8 @@
   --max: 1120px;
   --font: "Noto Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --primary: #8db3ec; --heading: #b3cbf1; --accent: #e8a33d; --on-accent: #1d2330; --on-primary: #0f1520;
-    --bg: #0f1520; --bg-soft: #151d2b; --surface: #1a2333; --text: #e4e8ef; --muted: #9ea8b9; --border: #2a3547;
-    --header-bg: rgba(15, 21, 32, .95);
-    --hero-a: #0f2646; --hero-b: #1b3f72; --on-hero: #ffffff; --hero-line: rgba(255, 255, 255, .5);
-    --b-blue-bg: #1d2f4d; --b-blue: #a3c1f2; --b-green-bg: #173a2a; --b-green: #86d6aa;
-    --b-purple-bg: #2c2346; --b-purple: #c9b5f2; --b-amber-bg: #3d2c12; --b-amber: #f2c277;
-    --note: #ff9e73; --pin-bg: #2a2414;
-    --footer-bg: #0a0f18; --footer-text: #9ea8b9; --footer-strong: #ffffff; --footer-link: #d8deea; --footer-line: #1e2838;
-    --stripe-a: #1a2333; --stripe-b: #202a3c;
-    --shadow: 0 2px 10px rgba(0, 0, 0, .3);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --primary: #8db3ec; --heading: #b3cbf1; --accent: #e8a33d; --on-accent: #1d2330; --on-primary: #0f1520;
-  --bg: #0f1520; --bg-soft: #151d2b; --surface: #1a2333; --text: #e4e8ef; --muted: #9ea8b9; --border: #2a3547;
-  --header-bg: rgba(15, 21, 32, .95);
-  --hero-a: #0f2646; --hero-b: #1b3f72; --on-hero: #ffffff; --hero-line: rgba(255, 255, 255, .5);
-  --b-blue-bg: #1d2f4d; --b-blue: #a3c1f2; --b-green-bg: #173a2a; --b-green: #86d6aa;
-  --b-purple-bg: #2c2346; --b-purple: #c9b5f2; --b-amber-bg: #3d2c12; --b-amber: #f2c277;
-  --note: #ff9e73; --pin-bg: #2a2414;
-  --footer-bg: #0a0f18; --footer-text: #9ea8b9; --footer-strong: #ffffff; --footer-link: #d8deea; --footer-line: #1e2838;
-  --stripe-a: #1a2333; --stripe-b: #202a3c;
-  --shadow: 0 2px 10px rgba(0, 0, 0, .3);
-  color-scheme: dark;
-}
+/* 항상 밝은 화면 (어두운 모드 사용 안 함) */
+:root { color-scheme: light; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
@@ -311,10 +285,8 @@ html[lang="ko"] body { font-family: var(--font-serif); }
 html[lang="ko"] :is(h1, h2, h3, h4, .site-header, .site-footer, .btn, .chip, .badge, .line, th, .eyebrow, .label, .cv-title, .stats, .year, .search, .pin, .tag-link, .count-line, .research-name, #location, #location *) { font-family: var(--font); }
 
 /* ---------- 연구실 로고 (헤더) ----------
- * 로고 이미지 배경이 흰색이라, 어두운 화면 모드에서는 흰 바탕 상자로 감쌉니다. */
+ */
 :root { --logo-bg: #ffffff; --logo-pad: 0px; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --logo-pad: 3px 6px; } }
-:root[data-theme="dark"] { --logo-pad: 3px 6px; }
 .brand-logo { height: 46px; width: auto; flex: none; display: block; background: var(--logo-bg); border-radius: 6px; padding: var(--logo-pad); box-sizing: content-box; }
 @media (max-width: 1200px) { .brand-logo { height: 40px; } }
 
