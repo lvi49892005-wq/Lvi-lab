@@ -7,7 +7,7 @@ window.SITE = {
   shortName: "LVI",
   university: "가톨릭대학교 의생명과학과",
   universityEn: "Department of Medical and Biological Sciences, The Catholic University of Korea",
-  email: "lvi4989.2005@gmail.com",
+  email: "jhnam@catholic.ac.kr",
   phone: "02-2164-4989",
   phoneIntl: "+82-2-2164-4989",
   address: "경기도 부천시 원미구 지봉로 43, 가톨릭대학교 성심관 504호",
