@@ -249,7 +249,10 @@
   /* ---------- News ---------- */
   const NEWS_CAT = { news: "연구실 소식", seminar: "세미나", recruit: "모집", notice: "공지" };
   function newsItem(n) {
-    const title = n.link ? `<a href="${ROOT}${esc(n.link)}">${esc(n.title)}</a>` : esc(n.title);
+    const ext = /^https?:\/\//.test(n.link || "");
+    const title = n.link
+      ? `<a href="${ext ? "" : ROOT}${esc(n.link)}"${ext ? ' target="_blank" rel="noopener"' : ""}>${esc(n.title)}${ext ? " ↗" : ""}</a>`
+      : esc(n.title);
     return `<li class="news-item${n.pinned ? " pinned" : ""}">
       <time datetime="${esc(n.date)}">${esc(n.date)}</time>
       <span class="badge badge-${n.category}">${NEWS_CAT[n.category] || n.category}</span>
