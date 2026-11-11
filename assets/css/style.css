@@ -377,3 +377,23 @@ body.lb-open { overflow: hidden; }
     padding-block: 88px 80px;
   }
 }
+
+/* ---------- 하위 페이지 상단 사진 (눈 덮인 캠퍼스) ----------
+ * 왼쪽(글자 쪽)은 흰색 그라데이션으로 덮어 제목·설명이 가려지지 않게 함 */
+:root { --veil: 255, 255, 255; }
+.page-hero {
+  background:
+    linear-gradient(90deg, rgba(var(--veil), .95) 0%, rgba(var(--veil), .88) 38%, rgba(var(--veil), .35) 62%, rgba(var(--veil), 0) 85%),
+    url("../img/sub-snow.webp") center 55% / cover no-repeat;
+  background-color: var(--bg-soft);
+  padding-block: 76px 64px;
+}
+@media (max-width: 760px) {
+  .page-hero {
+    background:
+      linear-gradient(180deg, rgba(var(--veil), .90) 0%, rgba(var(--veil), .82) 100%),
+      url("../img/sub-snow-sm.webp") 70% 55% / cover no-repeat;
+    background-color: var(--bg-soft);
+    padding-block: 56px 48px;
+  }
+}
