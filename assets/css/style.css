@@ -360,17 +360,18 @@ body.lb-open { overflow: hidden; }
 :root { --hero-shade: 16, 40, 74; }
 .hero.hero-photo {
   background:
-    linear-gradient(90deg, rgba(var(--hero-shade), .90) 0%, rgba(var(--hero-shade), .72) 40%, rgba(var(--hero-shade), .18) 72%, rgba(var(--hero-shade), 0) 100%),
+    linear-gradient(90deg, rgba(var(--hero-shade), .62) 0%, rgba(var(--hero-shade), .42) 40%, rgba(var(--hero-shade), .06) 72%, rgba(var(--hero-shade), 0) 100%),
     url("../img/hero-campus.webp") 0% 74% / max(125%, 1000px) auto no-repeat;
   background-color: var(--hero-a);
   padding-block: 120px 112px;
 }
 @media (min-width: 761px) { .hero.hero-photo p { max-width: 560px; } }
-.hero.hero-photo p { opacity: .95; text-shadow: 0 1px 2px rgba(0, 0, 0, .25); }
+.hero.hero-photo h1, .hero.hero-photo p { text-shadow: 0 1px 3px rgba(var(--hero-shade), .55), 0 0 18px rgba(var(--hero-shade), .35); }
+.hero.hero-photo p { opacity: 1; }
 @media (max-width: 760px) {
   .hero.hero-photo {
     background:
-      linear-gradient(180deg, rgba(var(--hero-shade), .80) 0%, rgba(var(--hero-shade), .70) 60%, rgba(var(--hero-shade), .45) 100%),
+      linear-gradient(180deg, rgba(var(--hero-shade), .58) 0%, rgba(var(--hero-shade), .48) 60%, rgba(var(--hero-shade), .25) 100%),
       url("../img/hero-campus-sm.webp") 70% 80% / cover no-repeat;
     background-color: var(--hero-a);
     padding-block: 88px 80px;
