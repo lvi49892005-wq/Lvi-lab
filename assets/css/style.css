@@ -354,3 +354,25 @@ body.lb-open { overflow: hidden; }
 .g-count { font-size: .8rem; font-weight: 500; color: var(--muted); margin-left: 4px; }
 .g-cap { margin: 6px 2px 0; font-size: .85rem; color: var(--muted); line-height: 1.4; }
 .album { scroll-margin-top: 90px; }
+
+/* ---------- 첫 화면 배너 사진 (가톨릭대학교 건물과 하늘) ----------
+ * 왼쪽은 남색으로 덮어 글자가 잘 읽히고, 오른쪽 아래 건물 간판이 보이도록 배치 */
+:root { --hero-shade: 16, 40, 74; }
+.hero.hero-photo {
+  background:
+    linear-gradient(90deg, rgba(var(--hero-shade), .90) 0%, rgba(var(--hero-shade), .72) 40%, rgba(var(--hero-shade), .18) 72%, rgba(var(--hero-shade), 0) 100%),
+    url("../img/hero-campus.webp") 0% 74% / max(125%, 1000px) auto no-repeat;
+  background-color: var(--hero-a);
+  padding-block: 120px 112px;
+}
+@media (min-width: 761px) { .hero.hero-photo p { max-width: 560px; } }
+.hero.hero-photo p { opacity: .95; text-shadow: 0 1px 2px rgba(0, 0, 0, .25); }
+@media (max-width: 760px) {
+  .hero.hero-photo {
+    background:
+      linear-gradient(180deg, rgba(var(--hero-shade), .80) 0%, rgba(var(--hero-shade), .70) 60%, rgba(var(--hero-shade), .45) 100%),
+      url("../img/hero-campus-sm.webp") 70% 80% / cover no-repeat;
+    background-color: var(--hero-a);
+    padding-block: 88px 80px;
+  }
+}
