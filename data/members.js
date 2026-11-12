@@ -48,7 +48,7 @@ window.MEMBERS = [
   },
 
   /* ----- 연구교수 ----- */
-  { group: "research-prof", name: "이지선", nameEn: "", position: "연구교수", positionEn: "Research Professor", links: {} },
+  { group: "research-prof", name: "이지선", nameEn: "Jisun Lee", position: "연구교수", positionEn: "Research Professor", links: {} },
 
   /* ----- 랩매니저 ----- */
   { group: "staff", name: "안혜영", nameEn: "", position: "랩매니저", positionEn: "Lab Manager", links: {} },
