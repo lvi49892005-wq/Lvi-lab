@@ -1,6 +1,6 @@
 /* =========================================================
  * 구성원 목록
- *  group: "faculty" | "researcher" | "integrated"(석박통합) | "phd" | "ms" | "intern"
+ *  group: "faculty" | "research-prof"(연구교수) | "staff"(랩매니저) | "researcher" | "integrated"(석박통합) | "phd" | "ms" | "intern"
  *  photo: "assets/img/파일명.jpg" (비워두면 이니셜 아바타 표시)
  *  links: 해당 항목이 없으면 빈 문자열 → 아이콘이 숨겨집니다.
  *  career / careerEn: 교수 약력 (위에서부터 최신순)
@@ -46,6 +46,12 @@ window.MEMBERS = [
     ],
     links: { scholar: "https://scholar.google.com/citations?user=0KNsVokAAAAJ&hl=ko", github: "", homepage: "", orcid: "" }
   },
+
+  /* ----- 연구교수 ----- */
+  { group: "research-prof", name: "이지선", nameEn: "", position: "연구교수", positionEn: "Research Professor", links: {} },
+
+  /* ----- 랩매니저 ----- */
+  { group: "staff", name: "안혜영", nameEn: "", position: "랩매니저", positionEn: "Lab Manager", links: {} },
 
   /* ----- 석박통합과정 ----- */
   { group: "integrated", name: "하다현", nameEn: "Dahyeon Ha",     position: "석박통합과정", positionEn: "Integrated M.S.–Ph.D. Student", links: {} },

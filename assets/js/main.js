@@ -180,6 +180,8 @@
   /* ---------- Members ---------- */
   const GROUPS = [
     ["faculty", "교수진", "Faculty"],
+    ["research-prof", "연구교수", "Research Professors"],
+    ["staff", "랩매니저", "Lab Manager"],
     ["researcher", "연구원", "Researchers"],
     ["integrated", "석박통합과정", "Integrated M.S.–Ph.D. Students"],
     ["phd", "박사과정", "Ph.D. Students"],
